@@ -130,7 +130,7 @@ http://localhost:8501
 ```
 Available endpoints:
 
-* deployment link in streamlit:  [https://tax-ird-assistant.streamlit.app]
+* deployment link in streamlit: https://tax-ird-assistant.streamlit.app
 
 
 ---
