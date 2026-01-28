@@ -127,8 +127,9 @@ Open in browser:
 ```
 http://localhost:8501
 
-```
-Available endpoints:
+---
+
+## Available endpoints:
 
 * deployment link in streamlit: https://tax-ird-assistant.streamlit.app
 
@@ -225,13 +226,12 @@ Example response:
 
 This project is intended for educational, research, and demonstration purposes.
 
-```
 ---
 ## Design Rationale
 
 The design decisions, system architecture, and use of Retrieval-Augmented Generation (RAG)
 are documented in the following PDF:
 
-📄 [Design Rationale – Intelligent Sri Lanka IRD Tax Intelligence & Compliance Assistant](docs/Intelligent Sri Lanka IRD Tax Intelligence & Compliance Assistant.pdf)
+📄 [Design Rationale – Intelligent Sri Lanka IRD Tax Intelligence & Compliance Assistant](docs/Intelligent_Sri_Lanka_IRD_Tax_Intelligence_Compliance_Assistant.pdf)
 
 
