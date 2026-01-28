@@ -126,8 +126,12 @@ Open in browser:
 
 ```
 http://localhost:8501
-deployment link in streamlit : https://tax-ird-assistant.streamlit.app/
+
 ```
+Available endpoints:
+
+* deployment link in streamlit:  [https://tax-ird-assistant.streamlit.app]
+
 
 ---
 
