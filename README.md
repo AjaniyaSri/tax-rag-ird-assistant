@@ -1,0 +1,226 @@
+# Intelligent Sri Lanka IRD Tax Intelligence & Compliance Assistant  
+*(Retrieval-Augmented Generation System)*
+
+## Overview
+The **Intelligent Sri Lanka IRD Tax Intelligence & Compliance Assistant** is a document-grounded Question Answering system built using **Retrieval-Augmented Generation (RAG)**.  
+It enables users to query Sri Lanka Inland Revenue Department (IRD) tax information and receive **accurate, citation-backed answers** derived strictly from uploaded official IRD PDF documents.
+
+The system is designed to **prevent hallucinations**, ensure **traceability**, and support **compliance-oriented use cases**.
+
+---
+
+## Key Features
+- Upload official IRD tax documents (PDF)
+- Automatic text extraction with page tracking
+- Chunking and semantic indexing using vector embeddings
+- Context-aware question answering using RAG
+- Citation support (document name, page number, section)
+- Strict fallback for unavailable information
+- Web-based UI for document ingestion and querying
+- Fully local inference using Ollama (no paid API keys)
+
+---
+
+## Technology Stack
+
+### Backend
+- Python 3.11+
+- FastAPI
+- Uvicorn
+- PyMuPDF (PDF text extraction)
+- ChromaDB (vector database)
+- Sentence Transformers (embeddings)
+
+### LLM & Retrieval
+- Ollama (local LLM inference)
+- phi-3 / tinyllama (lightweight models)
+- Custom dependency-safe chunking pipeline
+
+### Frontend
+- Streamlit (web-based UI)
+
+### Development
+- Git & GitHub
+- Virtual Environment (venv)
+
+---
+
+## System Architecture (High Level)
+1. User uploads IRD PDF documents
+2. PDFs are parsed page-by-page
+3. Text is split into overlapping chunks
+4. Chunks are embedded and stored in a vector database
+5. User queries are matched against relevant chunks
+6. Retrieved context is passed to the LLM
+7. Final answer is generated with citations
+
+---
+
+## Setup Instructions (Windows)
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/AjaniyaSri/tax-rag-ird-assistant.git
+cd tax-rag-ird-assistant
+````
+
+### 2. Create and Activate Virtual Environment
+
+```powershell
+python -m venv venv
+venv\Scripts\activate
+```
+---
+
+### 3. Install Dependencies
+
+```powershell
+pip install --upgrade pip
+pip install fastapi uvicorn python-multipart pymupdf chromadb langchain langchain-community sentence-transformers streamlit requests
+```
+---
+
+### 4. Install Ollama and Pull Model
+
+Download Ollama from: [https://ollama.com](https://ollama.com)
+
+Pull a lightweight model:
+
+```powershell
+ollama pull phi3
+setx OLLAMA_MODEL phi3
+```
+
+Restart the terminal after setting the environment variable.
+
+---
+
+## Running the Application
+
+### Backend (FastAPI)
+
+From the project root:
+
+```powershell
+venv\Scripts\activate
+uvicorn app.main:app --port 8000
+```
+
+Available endpoints:
+
+* Health check: [http://localhost:8000/health](http://localhost:8000/health)
+* API documentation: [http://localhost:8000/docs](http://localhost:8000/docs)
+
+---
+
+### Frontend (Streamlit UI)
+
+In a separate terminal:
+
+```powershell
+venv\Scripts\activate
+streamlit run UI/app.py
+```
+
+Open in browser:
+
+```
+http://localhost:8501
+deployment link in streamlit : https://tax-ird-assistant.streamlit.app/
+```
+
+---
+
+## API Overview
+
+### Upload PDF
+
+**POST** `/documents/upload`
+
+* Multipart form-data
+* Field name: `file`
+
+---
+
+### Index Documents
+
+**POST** `/documents/index`
+Indexes all uploaded PDFs into the vector database.
+
+---
+
+### Query Documents
+
+**POST** `/query`
+
+Example request:
+
+```json
+{
+  "question": "What is the corporate income tax rate?",
+  "top_k": 6
+}
+```
+
+Example response:
+
+```json
+{
+  "answer": "The corporate income tax rate is ...",
+  "citations": [
+    {
+      "document": "IRD_Guide.pdf",
+      "page": 12,
+      "section": "Tax Rates",
+      "snippet": "..."
+    }
+  ],
+  "disclaimer": "This response is based solely on IRD-published documents and is not professional tax advice."
+}
+```
+---
+
+## Assumptions
+
+* The assistant answers **only** from uploaded IRD PDF documents
+* No external or internet-based tax knowledge is used
+* If the answer is not found in the provided documents, the system responds with:
+  **“This information is not available in the provided IRD documents.”**
+* Uploaded documents are assumed to be official and text-extractable PDFs
+
+---
+
+## Compliance & Safety
+
+* No hallucinated answers
+* Full source traceability through citations
+* Local inference (data never leaves the machine)
+* Suitable for compliance-sensitive environments
+
+---
+
+## Limitations
+
+* OCR is not included for scanned PDFs
+* Section detection is heuristic-based
+* Coverage limited to uploaded documents
+
+---
+
+## Future Enhancements
+
+* OCR support for scanned PDFs
+* Advanced re-ranking for improved retrieval
+* Authentication and role-based access
+* Multi-language support
+* Cloud deployment options
+
+---
+
+## License
+
+This project is intended for educational, research, and demonstration purposes.
+
+```
+---
+
