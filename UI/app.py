@@ -5,7 +5,7 @@ API_BASE = "http://localhost:8000"
 
 st.set_page_config(page_title="IRD Tax Assistant", layout="centered")
 
-st.title("🇱🇰 IRD Tax Intelligence Assistant")
+st.title("IRD Tax Intelligence Assistant")
 st.caption("Answers based only on official IRD documents")
 
 st.divider()
