@@ -250,7 +250,8 @@ This project is intended for **educational, research, and demonstration purposes
 
 The design decisions, system architecture, and use of Retrieval-Augmented Generation (RAG) are documented in the following PDF:
 
-📄 **Design Rationale – Intelligent Sri Lanka IRD Tax Intelligence & Compliance Assistant**
-`doc/Intelligent_Sri_Lanka_IRD_Tax_Intelligence_Compliance_Assistant.pdf`
+📄 **Design Rationale – Intelligent Sri Lanka IRD Tax Intelligence & Compliance Assistant**  
+[View PDF](doc/Intelligent_Sri_Lanka_IRD_Tax_Intelligence_Compliance_Assistant.pdf)
+
 
 
