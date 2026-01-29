@@ -1,9 +1,3 @@
-Perfect — thanks for sharing `main.py`. Below is a **clean, professional, HR-ready `docs/API.md`** that exactly matches your FastAPI implementation.
-
-You can **copy–paste this as `docs/API.md`** in your repo.
-
----
-
 # API Documentation
 
 **IRD Tax RAG Assistant – REST API**
