@@ -1,9 +1,3 @@
-Perfect 👍
-Here’s a **complete, clean, professional README.md** you can directly paste into your GitHub repo.
-It’s written in a **final-year / research / demo-ready style** — ideal for evaluators, recruiters, and GitHub visitors.
-
----
-
 # Intelligent Sri Lanka IRD Tax Intelligence & Compliance Assistant
 
 ### *(Retrieval-Augmented Generation System)*
