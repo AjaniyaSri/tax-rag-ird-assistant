@@ -1,68 +1,87 @@
-# Intelligent Sri Lanka IRD Tax Intelligence & Compliance Assistant  
-*(Retrieval-Augmented Generation System)*
+Perfect 👍
+Here’s a **complete, clean, professional README.md** you can directly paste into your GitHub repo.
+It’s written in a **final-year / research / demo-ready style** — ideal for evaluators, recruiters, and GitHub visitors.
+
+---
+
+# Intelligent Sri Lanka IRD Tax Intelligence & Compliance Assistant
+
+### *(Retrieval-Augmented Generation System)*
 
 ## Overview
-The **Intelligent Sri Lanka IRD Tax Intelligence & Compliance Assistant** is a document-grounded Question Answering system built using **Retrieval-Augmented Generation (RAG)**.  
-It enables users to query Sri Lanka Inland Revenue Department (IRD) tax information and receive **accurate, citation-backed answers** derived strictly from uploaded official IRD PDF documents.
 
-The system is designed to **prevent hallucinations**, ensure **traceability**, and support **compliance-oriented use cases**.
+The **Intelligent Sri Lanka IRD Tax Intelligence & Compliance Assistant** is a document-grounded **Question Answering (QA) system** built using **Retrieval-Augmented Generation (RAG)**.
+It allows users to query Sri Lanka Inland Revenue Department (IRD) tax information and receive **accurate, citation-backed answers** derived strictly from **official IRD PDF documents**.
+
+The system is explicitly designed to **prevent hallucinations**, ensure **full traceability**, and support **compliance-oriented use cases**, making it suitable for educational, research, and regulatory demonstrations.
 
 ---
 
 ## Key Features
-- Upload official IRD tax documents (PDF)
-- Automatic text extraction with page tracking
-- Chunking and semantic indexing using vector embeddings
-- Context-aware question answering using RAG
-- Citation support (document name, page number, section)
-- Strict fallback for unavailable information
-- Web-based UI for document ingestion and querying
-- Fully local inference using Ollama (no paid API keys)
+
+* Upload official IRD tax documents (PDF)
+* Automatic page-wise text extraction
+* Overlapping chunking with metadata preservation
+* Semantic search using vector embeddings
+* Context-aware question answering (RAG)
+* Citation support (document name, page number, section, snippet)
+* Strict fallback when information is unavailable
+* Web-based UI for document ingestion and querying
+* Fully local inference using Ollama (no paid API keys)
 
 ---
 
 ## Technology Stack
 
 ### Backend
-- Python 3.11+
-- FastAPI
-- Uvicorn
-- PyMuPDF (PDF text extraction)
-- ChromaDB (vector database)
-- Sentence Transformers (embeddings)
+
+* Python 3.11+
+* FastAPI
+* Uvicorn
+* PyMuPDF (PDF text extraction)
+* ChromaDB (vector database)
+* Sentence Transformers (embeddings)
 
 ### LLM & Retrieval
-- Ollama (local LLM inference)
-- phi-3 / tinyllama (lightweight models)
-- Custom dependency-safe chunking pipeline
+
+* Ollama (local LLM inference)
+* phi-3 / tinyllama (lightweight models)
+* Custom dependency-safe chunking pipeline
 
 ### Frontend
-- Streamlit (web-based UI)
 
-### Development
-- Git & GitHub
-- Virtual Environment (venv)
+* Streamlit (web-based UI)
+
+### Development Tools
+
+* Git & GitHub
+* Virtual Environment (venv)
 
 ---
 
-## System Architecture (High Level)
+## System Architecture (High-Level)
+
 1. User uploads IRD PDF documents
 2. PDFs are parsed page-by-page
 3. Text is split into overlapping chunks
 4. Chunks are embedded and stored in a vector database
-5. User queries are matched against relevant chunks
-6. Retrieved context is passed to the LLM
-7. Final answer is generated with citations
+5. User queries are embedded and matched semantically
+6. Relevant chunks are retrieved
+7. Retrieved context is passed to the LLM
+8. Final answer is generated with citations
 
 ---
 
 ## Setup Instructions (Windows)
 
 ### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/AjaniyaSri/tax-rag-ird-assistant.git
 cd tax-rag-ird-assistant
-````
+```
+
+---
 
 ### 2. Create and Activate Virtual Environment
 
@@ -70,6 +89,7 @@ cd tax-rag-ird-assistant
 python -m venv venv
 venv\Scripts\activate
 ```
+
 ---
 
 ### 3. Install Dependencies
@@ -78,11 +98,13 @@ venv\Scripts\activate
 pip install --upgrade pip
 pip install fastapi uvicorn python-multipart pymupdf chromadb langchain langchain-community sentence-transformers streamlit requests
 ```
+
 ---
 
 ### 4. Install Ollama and Pull Model
 
-Download Ollama from: [https://ollama.com](https://ollama.com)
+Download Ollama from:
+[https://ollama.com](https://ollama.com)
 
 Pull a lightweight model:
 
@@ -91,7 +113,7 @@ ollama pull phi3
 setx OLLAMA_MODEL phi3
 ```
 
-Restart the terminal after setting the environment variable.
+> Restart the terminal after setting the environment variable.
 
 ---
 
@@ -126,13 +148,14 @@ Open in browser:
 
 ```
 http://localhost:8501
+```
 
 ---
 
-## Available endpoints:
+## Deployments
 
-* deployment link in streamlit: https://tax-ird-assistant.streamlit.app
-
+**Streamlit Cloud Deployment:**
+[https://tax-ird-assistant.streamlit.app](https://tax-ird-assistant.streamlit.app)
 
 ---
 
@@ -183,13 +206,14 @@ Example response:
   "disclaimer": "This response is based solely on IRD-published documents and is not professional tax advice."
 }
 ```
+
 ---
 
 ## Assumptions
 
-* The assistant answers **only** from uploaded IRD PDF documents
+* The assistant answers **only from uploaded IRD PDF documents**
 * No external or internet-based tax knowledge is used
-* If the answer is not found in the provided documents, the system responds with:
+* If the answer is not found, the system responds with:
   **“This information is not available in the provided IRD documents.”**
 * Uploaded documents are assumed to be official and text-extractable PDFs
 
@@ -215,24 +239,24 @@ Example response:
 ## Future Enhancements
 
 * OCR support for scanned PDFs
-* Advanced re-ranking for improved retrieval
+* Advanced re-ranking for improved retrieval accuracy
 * Authentication and role-based access
-* Multi-language support
-* Cloud deployment options
+* Multi-language support (Sinhala / Tamil / English)
+* Cloud-based scalable deployment options
 
 ---
 
 ## License
 
-This project is intended for educational, research, and demonstration purposes.
+This project is intended for **educational, research, and demonstration purposes only**.
 
 ---
+
 ## Design Rationale
 
-The design decisions, system architecture, and use of Retrieval-Augmented Generation (RAG)
-are documented in the following PDF:
+The design decisions, system architecture, and use of Retrieval-Augmented Generation (RAG) are documented in the following PDF:
 
-📄 [Design Rationale – Intelligent Sri Lanka IRD Tax Intelligence & Compliance Assistant](doc/Intelligent_Sri_Lanka_IRD_Tax_Intelligence_Compliance_Assistant.pdf)
-
+📄 **Design Rationale – Intelligent Sri Lanka IRD Tax Intelligence & Compliance Assistant**
+`doc/Intelligent_Sri_Lanka_IRD_Tax_Intelligence_Compliance_Assistant.pdf`
 
 
